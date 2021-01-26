@@ -16,7 +16,7 @@ def random_generator(seed):
     """
     randon generator to use in diamond square algorithm
     """
-    return random.randint(-seed, seed)
+    return random.uniform(-seed, seed)
 
 def init_grid(size, random_seed):
     """
@@ -158,7 +158,7 @@ def quadtree_diamond_square_algorithm(grid, nw_position, current_length, current
 
 
         nw_position, ne_position, sw_position, se_position = recalculate_positions(midpoint, new_length)
-        current_random_seed = current_random_seed - 1
+        current_random_seed = current_random_seed - 0.2
         quadtree_diamond_square_algorithm(grid, nw_position, new_length, current_random_seed)
         quadtree_diamond_square_algorithm(grid, ne_position, new_length, current_random_seed)
         quadtree_diamond_square_algorithm(grid, sw_position, new_length, current_random_seed)

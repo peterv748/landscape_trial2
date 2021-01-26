@@ -13,12 +13,12 @@ def main():
     main procedure
     """
 
-    size = 10
+    size = 4
     last_position = [(2**size + 1), (2**size + 1)]
     first_position = [1,1]
     length = last_position[0] - first_position[0]
     current_length = length
-    current_random_seed = 10
+    current_random_seed = 2
     grid = landscape.init_grid(int(last_position[0]), current_random_seed)
     start = time.time()
     landscape.quadtree_diamond_square_algorithm(grid, first_position, current_length, current_random_seed)
