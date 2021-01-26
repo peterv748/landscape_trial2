@@ -18,7 +18,7 @@ def main():
     first_position = [1,1]
     length = last_position[0] - first_position[0]
     current_length = length
-    current_random_seed = 2
+    current_random_seed = 1
     grid = landscape.init_grid(int(last_position[0]), current_random_seed)
     start = time.time()
     landscape.quadtree_diamond_square_algorithm(grid, first_position, current_length, current_random_seed)
