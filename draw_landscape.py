@@ -10,8 +10,10 @@ def plot_landscape(image_temp, elapsed_time, graph_type):
     plotting the calculated fractal landscape and writing it to file
     """
     if graph_type == "3D":
-        x_index = np.zeros([len(image_temp)])
-        y_index = np.zeros([len(image_temp)])
+    #    x_index = np.zeros([len(image_temp)])
+    #    y_index = np.zeros([len(image_temp)])
+        x_index = [i for i in range(0, len(image_temp))]
+        y_index = [i for i in range(0, len(image_temp))]
         x_value, y_value = np.meshgrid(x_index, y_index)
         fig = plt.figure()
         p2 = fig.add_subplot(111, projection="3d")

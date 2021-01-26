@@ -25,7 +25,7 @@ def main():
     time_elapsed = time.time() - start
 
     print(grid)
-    graph_type = "2D"
+    graph_type = "3D"
     draw_landscape.plot_landscape(grid, time_elapsed, graph_type)
 
 if __name__ == "__main__":
