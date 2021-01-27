@@ -13,7 +13,7 @@ def main():
     main procedure
     """
 
-    size = 4
+    size = 5
     last_position = [(2**size + 1), (2**size + 1)]
     first_position = [1,1]
     length = last_position[0] - first_position[0]

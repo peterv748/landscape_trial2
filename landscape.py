@@ -24,10 +24,10 @@ def init_grid(size, random_seed):
     """
     i = int(size)
     grid = np.zeros([i, i])
-    grid[0,0] = random_generator(random_seed)
-    grid[(i-1), 0] = random_generator(random_seed)
-    grid[(0,(i-1) )] = random_generator(random_seed)
-    grid[((i-1), (i-1))] = random_generator(random_seed)
+    grid[0,0] = 0 #random_generator(random_seed)
+    grid[(i-1), 0] = 0 # random_generator(random_seed)
+    grid[(0,(i-1) )] = 0 #random_generator(random_seed)
+    grid[((i-1), (i-1))] = 0 #random_generator(random_seed)
 
     return grid
 
@@ -118,7 +118,7 @@ def calculate_squarestep_value(grid, midpoint, upper_left,  upper_right, lower_l
     for point in [upper_left, upper_right, lower_left, lower_right]:
         new_value = new_value + grid[(point[0]-1), (point[1]-1)]
 
-    grid[(midpoint[0]-1), (midpoint[1]-1)] = (new_value / 4) + random_generator(current_random_seed)
+    grid[(midpoint[0]-1), (midpoint[1]-1)] = (new_value / 4) + (random_generator(current_random_seed) / 3)
 
     return
 
@@ -131,7 +131,7 @@ def calculate_diamondstep_values(grid, north, west, south, east, distance, curre
         """
         average_value = compute_average(grid[(point1[0]-1), (point1[1]-1)], grid[(point2[0]-1), (point2[1]-1)], \
                                 grid[(point3[0]-1), (point3[1]-1)], grid[(point4[0]-1), (point4[1]-1)]) 
-        average_value = average_value + random_generator(current_random_seed)
+        average_value = average_value + (random_generator(current_random_seed) /3)
         return float(average_value)
 
     for point in [north, west, south, east]:
